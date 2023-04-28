@@ -1,7 +1,7 @@
 class Chameleon::WidgetsController < ApplicationController
-  before_filter :find_widget
-  before_filter :validate_key
-  skip_before_filter :verify_authenticity_token
+  before_action :find_widget
+  before_action :validate_key
+  skip_before_action :verify_authenticity_token
 
   def show
     @data = @widget.data.call(@auth)
